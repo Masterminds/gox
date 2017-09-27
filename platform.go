@@ -73,6 +73,7 @@ var (
 		"mips64le",
 		"ppc64",
 		"ppc64le",
+		"s390x",
 	}
 
 	Platforms_1_0 = []Platform{
@@ -122,8 +123,10 @@ var (
 		{OS: "linux", Arch: "ppc64le", Default: false},
 	}...)
 
-	// Nothing changed from 1.5 to 1.6
-	Platforms_1_6 = Platforms_1_5
+	// Support for s390x https://en.wikipedia.org/wiki/IBM_System_z9
+	Platforms_1_6 = append(Platforms_1_5, []Platform{
+		{OS: "linux", Arch: "s390x", Default: true},
+	}...)
 )
 
 // SupportedPlatforms returns the full list of supported platforms for
