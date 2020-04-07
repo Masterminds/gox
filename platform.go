@@ -134,7 +134,7 @@ var (
 func SupportedPlatforms(v string) []Platform {
 	if strings.HasPrefix(v, "go1.0") {
 		return Platforms_1_0
-	} else if strings.HasPrefix(v, "go1.1") {
+	} else if strings.HasSuffix(v, "go1.1") {
 		return Platforms_1_1
 	} else if strings.HasPrefix(v, "go1.3") {
 		return Platforms_1_3
